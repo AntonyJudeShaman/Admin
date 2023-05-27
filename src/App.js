@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./App.css";
+import Signin  from "./signform";
 import logo from "./logo1.png";
 import Background from "./background";
 import Section0 from "./section0";
@@ -52,6 +53,8 @@ function App() {
     return <Team/>;
   } else if(currentPath === "/gallery") {
     return <Gallery/>;
+  } else if(currentPath === "/signin") {
+    return <Signin/>;
   } else{
     return (
     <>
@@ -116,11 +119,11 @@ function App() {
             {showDropdown && (
               <div className="absolute pbar  bg-indigo-900  text-white  rounded-lg  ">
                 <ul className="rounded-lg">
-                 
-                    <button className=" w-full   hover:text-zinc-300 hover:rounded-lg hover:border border-b" onMouseEnter={handleProfile}>
+                 <a href="./signin">
+                    <button href="./signin" className=" w-full   hover:text-zinc-300 hover:rounded-lg hover:border border-b" onMouseEnter={handleProfile}>
                       View Profile
                     </button>
-                 
+                    </a>
                     <button className="w-full hover:text-zinc-300 hover:rounded-lg hover:border border-t" onClick={handleLogout}>
                       Logout
                     </button>
